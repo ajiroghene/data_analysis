@@ -1,0 +1,40 @@
+
+import pandas as pd
+
+df = pd.read_csv('jamb.csv')
+
+print(df.corr())
+
+# 1 means that there is a 1 to 1 relationship (a perfect correlation), and for this data set, each time a value went up in the first column, the other one went up as well.
+
+# 0.9 is also a good relationship, and if you increase one value, the other will probably increase as well.
+
+# -0.9 would be just as good relationship as 0.9, but if you increase one value, the other will probably go down.
+
+# 0.2 means NOT a good relationship, meaning that if one value goes up does not mean that the other will.#
+
+import pandas as pd
+import matplotlib.pyplot as plt
+
+df = pd.read_csv('jamb.csv')
+
+df.plot()
+
+plt.show()
+
+import pandas as pd
+import matplotlib.pyplot as nath
+
+df = pd.read_csv('data.csv')
+
+df.plot(kind = 'scatter', x = 'JAMB_Score', y = 'Study_Hours_Per_Week')
+
+nath.show()
+
+In general, you are correct for simple regression, where you have one independent variable and the dependent variable. The R-square for that model is literally the square of the Pearson’s correlation (r) for those two variables. As you mention, regression gives you additional output along with the strength of the relationship.
+
+But there are a few caveats.
+
+Regression is much more flexible than correlation because it allows you to add other variables, fit curvature and include interaction effects. For example, regression allows you to fit curvature between the two variables using polynomials. So, there are cases where using Pearson’s correlation is inappropriate because the data violate some of the assumptions but regression analysis can handle those data acceptably.
+
+But what you say is correct when you’re looking at a straight line relationship between a pair of variables. In that specific case, simple regression and Pearson’s correlation provide consistent information with regression providing more details.
